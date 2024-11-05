@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touccan - Perfil</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar (Menu Lado Esquerdo) -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <img src="./Logo titulo (1).png" alt="Logo Touccan">
+            </div>
+            <ul class="sidebar-menu">
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-home"></i>Página Inicial</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-search"></i>Pesquisar</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-bell"></i>Notificações</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-envelope"></i>Mensagens</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-history"></i>Histórico</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-id-card"></i>Cofre</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#"><i class="fas fa-cog"></i>Configurações</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Perfil (Centro da tela) -->
+        <div class="profile-container">
+            <!-- Seção Fixa do Perfil -->
+            <div class="profile-fixo">
+                <div class="profile-picture">
+                    <img src="./Imagem - Perfil.png" alt="Foto de Perfil">
+                </div>
+                <h2>Maria Silva, 23</h2>
+                <div class="stars">★★★★★</div>
+            </div>
+
+            <!-- Abas Sobre Mim e Feedback -->
+            <div class="tabs">
+                <button class="tab-button active" data-tab="about-me">Sobre Mim</button>
+                <button class="tab-button" data-tab="feedback">Feedback</button>
+            </div>
+
+            <!-- Conteúdo das Abas -->
+            <div class="tab-content active" id="about-me">
+                <div class="formacao">
+                    <label>Formação</label>
+                    <select>
+                        <option value="1">Nível 1: Ensino Fundamental Incompleto</option>
+                        <option value="2">Nível 2: Fundamental Completo / Médio Incompleto</option>
+                        <option value="3">Nível 3: Ensino Médio Completo / Superior Incompleto</option>
+                        <option value="4">Nível 4: Superior Completo</option>
+                    </select>
+                </div>
+                <div class="disponibilidade">
+                    <label>Disponibilidade</label>
+                    <select>
+                        <option value="1">Disponível agora</option>
+                        <option value="2">Disponível no período da manhã</option>
+                        <option value="3">Disponível no período da tarde</option>
+                        <option value="4">Disponível com acordo</option>
+                    </select>
+                </div>
+                <div class="biografia">
+                    <label>Biografia</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <div class="habilidades">
+                    <label>Habilidades</label>
+                    <textarea rows="4"></textarea>
+                </div>
+                <button class="edit-curriculum">Editar Currículo</button>
+            </div>
+
+            <div class="tab-content" id="feedback">
+                <div class="feedback-box">
+                    <div class="feedback-section">
+                        <h3>Feedback dos Usuários</h3>
+                        <p>“Excelente profissional, sempre entrega no prazo!”</p>
+                        <div class="stars">★★★★★</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const activeTab = document.querySelector('.tab-button.active');
+                activeTab.classList.remove('active');
+                tab.classList.add('active');
+
+                const activeContent = document.querySelector('.tab-content.active');
+                activeContent.classList.remove('active');
+
+                const newContent = document.getElementById(tab.dataset.tab);
+                newContent.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

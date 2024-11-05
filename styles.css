@@ -1,0 +1,250 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #EBEBEB;
+    display: flex;
+    height: 100vh;
+    font-weight: bold;
+    overflow: hidden;
+    
+}
+
+.container {
+    display: flex;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 220px;
+    background-color: #EBEBEB;
+    padding: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Linha divisória ao lado direito do menu */
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -1px; 
+    width: 1px;
+    height: 100%;
+    background-color: #929292; 
+}
+
+/* Logo Touccan tamanho */
+.sidebar-logo {
+    width: 150%;
+    margin-bottom: 30px; /* Diminui o espaço abaixo da logo */
+    margin-left: -55px;
+}
+
+/* Logo Touccan posição */
+.sidebar-logo img {
+    max-width: 100%;
+    height: auto;
+    margin-top: -60px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-grow: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Organização/posicionamento do menu */
+.menu-item {
+    margin: 17px 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Design da fonte */
+.menu-item a {
+    text-decoration: none;
+    color: #333333;
+    font-size: 20px;
+    font-weight: bold;
+}
+.menu-item i {
+    width: 33px;
+    height: 33px;
+    margin-right: 10px; /* Aumente o valor para mais espaço */
+}
+
+.menu-item a:hover {
+    color: #F07B07;
+}
+
+/* Estilo do perfil */
+.profile-container {
+    flex-grow: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Alinhamento superior */
+    margin-left: 400px;
+}
+
+/* Perfil - Sobreposição do quadrado */
+.profile-fixo {
+    position: relative;
+    background-color: #EBEBEB;
+    padding: 20px;
+    border-radius: 8px;
+    z-index: 10;
+    margin-bottom: -150px; /* Adicione uma margem inferior para criar espaço após o quadrado */
+    text-align: center;
+}
+
+/* Seção de Feedback com fundo branco */
+.feedback-box {
+    display: flex;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+   
+}
+
+/* Imagem do perfil */
+.profile-fixo .profile-picture img {
+    width: 150px; /* Tamanho da imagem do perfil */
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #E97911;
+}
+
+/* Estilo do título e estrelas */
+.profile-fixo h2, .profile-fixo .stars {
+    margin: 10px 0;
+    text-align: center;
+}
+
+/* Abas */
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 150px; /* Espaço acima da seção fixa */
+    margin-bottom: 50px;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    font-size: 18px;
+    font-weight: bold; 
+    padding: 10px;
+    cursor: pointer;
+    margin: 0 50px; /* Define uma margem lateral uniforme para espaçamento */
+}
+
+.tab-button.active {
+    color: #E97911;
+    border-bottom: 3px solid #E97911;
+}
+
+.tab-button:not(.active) {
+    color: #B1B1B1;
+}
+
+/* Conteúdo das abas */
+.tab-content {
+    display: none;
+    width: 80%; 
+    max-width: 600px; 
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.formacao, .disponibilidade {
+    width: 100%; 
+    max-width: 600px; 
+    margin-bottom: 16px; 
+}
+
+.biografia, .habilidades {
+    width: 100%; 
+    max-width: 580px; 
+    margin-bottom: 16px; 
+}
+
+/* Ajustar textarea e select para preencher as caixas */
+textarea, select {
+    width: calc(100% - 22px); 
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px; 
+    color: #333; 
+}
+
+/* Estilo do botão de editar currículo */
+.edit-curriculum {
+    background-color: #E97911;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+    margin: 50px auto; 
+    display: block; 
+}
+
+/* Caixa de feedback */
+.feedback-box {
+    display: flex;
+}
+
+.feedback-section {
+    border-left: 5px solid #E97911; 
+    padding-left: 10px;
+}
+
+.feedback-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.feedback-section p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Estilo das estrelas no feedback */
+.feedback-box .stars {
+    font-size: 24px;
+    color: #ffd900;
+    margin-top: 10px;
+}
+
+.profile-fixo .stars {
+    font-size: 24px;
+    color: #FFD700; /* Código da cor amarela */
+    margin-top: 10px;
+}
+
+/* Ajuste para aumentar a largura de Formação e Disponibilidade */
+.formacao select, .disponibilidade select {
+    width: 100%; /* Ajusta a largura para preencher completamente o container */
+    max-width: 700px; /* Defina uma largura máxima maior, se necessário */
+}
